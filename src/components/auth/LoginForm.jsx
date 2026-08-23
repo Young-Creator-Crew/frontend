@@ -1,5 +1,5 @@
 import { useState } from "react";
-import login from "../../services/authService.js";
+import { login } from "../../services/authService.js";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -34,6 +34,8 @@ function LoginForm() {
       setErrorMessage("Internal server error");
       return;
     }
+
+    setErrorMessage("An unexpected error occurred.");
   }
 
   return (
