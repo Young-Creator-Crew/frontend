@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { login } from "../../services/authService.js";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext.jsx";
+
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const user = useContext(AuthContext);
 
   const [errorMessage, setErrorMessage] = useState("");
 
